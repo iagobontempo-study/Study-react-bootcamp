@@ -31,9 +31,9 @@ export class Pokegame extends Component {
         return (
             <div>
                 <h1>Pokedex hand1</h1>
-                <Pokedex pokemons={hand1} exp={exp1} isWinner={exp1 > exp2}/>
+                <Pokedex pokemons={hand1} sumExp={exp1} isWinner={exp1 > exp2}/>
                 <h1>Pokedex hand2</h1>
-                <Pokedex pokemons={hand2} exp={exp2} isWinner={exp2 > exp1}/>
+                <Pokedex pokemons={hand2} sumExp={exp2} isWinner={exp2 > exp1}/>
             </div>
         )
     }
