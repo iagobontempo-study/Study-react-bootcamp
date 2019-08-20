@@ -7,7 +7,8 @@ import GlobalStyle from './GlobalStyle'
 // import Lottery from './ex/5loterry/Lottery';
 // import CoinFlipper from './ex/6coinflipper/CoinFlipper';
 // import ColorBoxes from './ex/7colorboxes/ColorBoxes';
-import BoxMaker from './ex/8boxmaker/BoxMaker'
+// import BoxMaker from './ex/8boxmaker/BoxMaker'
+import TodoList from './ex/9todo/TodoList'
 
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
       {/* <Lottery title="Test" maxBalls={3} maxNumbers={60} /> */}
       {/* <CoinFlipper /> */}
       {/* <ColorBoxes /> */}
-      <BoxMaker />
+      {/* <BoxMaker /> */}
+      <TodoList />
 
       <GlobalStyle />
     </div>
