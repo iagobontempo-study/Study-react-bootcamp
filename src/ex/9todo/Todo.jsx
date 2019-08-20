@@ -40,8 +40,10 @@ export class Todo extends Component {
                         <button onClick={this.toggleCancel}>Cancel</button>
                     </form>
                     :
-                    <div onClick={this.handleToggle} style={{color: this.props.completed && 'lightgray'}}>
+                    <div>
+                        <div onClick={this.handleToggle} style={{color: this.props.completed && 'lightgray'}}>
                         {this.props.task}
+                        </div>
                         <button onClick={this.toggleEdit}>Edit</button>
                         <button onClick={this.props.removeTodo}>Delete</button>
                     </div>
