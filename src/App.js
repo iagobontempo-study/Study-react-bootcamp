@@ -6,7 +6,8 @@ import GlobalStyle from './GlobalStyle'
 // import DiceGame from './ex/4dice/DiceGame';
 // import Lottery from './ex/5loterry/Lottery';
 // import CoinFlipper from './ex/6coinflipper/CoinFlipper';
-import ColorBoxes from './ex/7colorboxes/ColorBoxes';
+// import ColorBoxes from './ex/7colorboxes/ColorBoxes';
+import BoxMaker from './ex/8boxmaker/BoxMaker'
 
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
       {/* <Lottery /> */}
       {/* <Lottery title="Test" maxBalls={3} maxNumbers={60} /> */}
       {/* <CoinFlipper /> */}
-      <ColorBoxes />
+      {/* <ColorBoxes /> */}
+      <BoxMaker />
 
       <GlobalStyle />
     </div>
