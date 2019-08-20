@@ -4,42 +4,52 @@ import NewTodoForm from './NewTodoForm';
 
 export class TodoList extends Component {
     state = {
-        list: [
-            { id: 1, todo: 'Buy some apple' },
-            { id: 2, todo: 'Buy NOTHING' },
+        todoList: [
         ]
     }
 
     addTodo = (newTodo) => {
         this.setState({
-            list: [...this.state.list, newTodo]
+            todoList: [...this.state.todoList, newTodo]
         })
     }
 
     removeTodo = (id) => {
         this.setState({
-            list: this.state.list.filter(todo => todo.id !== id)
+            todoList: this.state.todoList.filter(todo => todo.id !== id)
         })
     }
 
     updateTodo = (id, updatedTodo) => {
-        const updatedTodos = this.state.list.map(todo => {
+        const updatedTodos = this.state.todoList.map(todo => {
             if (todo.id === id){
-                return {...todo, todo: updatedTodo}
+                return {...todo, task: updatedTodo}
             }
             return todo
         })
-        this.setState({ list: updatedTodos})
+        this.setState({ todoList: updatedTodos})
+    }
+
+    toggleCompletion = (id) => {
+        const updatedTodos = this.state.todoList.map(todo => {
+            if (todo.id === id){
+                return {...todo, completed: !todo.completed }
+            }
+            return todo
+        })
+        this.setState({ todoList: updatedTodos})
     }
 
     renderTodos = () => {
         return (
             <ul>
-                {this.state.list.map(todo => (
+                {this.state.todoList.map(todo => (
                     <Todo key={todo.id} id={todo.id} 
-                    description={todo.todo} 
+                    task={todo.task} 
                     removeTodo={() => this.removeTodo(todo.id)}
-                    updateTodo={this.updateTodo} />
+                    updateTodo={this.updateTodo} 
+                    completed={todo.completed}
+                    toggleTodo={this.toggleCompletion} />
                 ))}
             </ul>
         )

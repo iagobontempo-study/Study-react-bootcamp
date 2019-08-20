@@ -3,7 +3,7 @@ import uuid from 'uuid/v4'
 
 export class NewTodoForm extends Component {
     state = {
-        todo: ''
+        task: ''
     }
 
     handleChange = (e) => {
@@ -14,8 +14,8 @@ export class NewTodoForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        this.props.addTodo({...this.state, id: uuid()})
-        this.setState({ todo: ''})
+        this.props.addTodo({ ...this.state, id: uuid(), completed: false })
+        this.setState({ task: '' })
     }
 
     render() {
@@ -23,7 +23,11 @@ export class NewTodoForm extends Component {
             <div>
                 <h1>Form</h1>
                 <form onSubmit={this.handleSubmit}>
-                    <input id="todo" type="text" placeholder="Todo" onChange={this.handleChange} value={this.state.todo} />
+                    <input id="task" type="text"
+                        placeholder="Todo"
+                        onChange={this.handleChange}
+                        value={this.state.task} 
+                        required/>
                     <button>ADD</button>
                 </form>
             </div>
