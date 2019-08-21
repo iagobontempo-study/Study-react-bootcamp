@@ -3,7 +3,7 @@ import GlobalStyle from './GlobalStyle'
 
 /*
 ! Lifecycle */
-// import ComponentDidMount from './lifecycle/ComponentDidMount'
+import ComponentDidMount from './lifecycle/ComponentDidMount'
 
 /*
 ! Exercices */
@@ -32,7 +32,7 @@ function App() {
       {/* <BoxMaker /> */}
       {/* <TodoList /> */}
 
-      {/* <ComponentDidMount /> */}
+      <ComponentDidMount />
 
       <GlobalStyle />
     </div>

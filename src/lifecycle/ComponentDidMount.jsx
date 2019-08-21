@@ -3,12 +3,26 @@ import axios from 'axios';
 
 export class ComponentDidMount extends Component {
     state = {
-        quote: ''
+        quote: '',
+        user: '',
+        id: '',
     }
 
     componentDidMount = () => {
-        axios.get("https://api.github.com/users/iagobontempo/").then(response => {
+        axios.get("https://api.github.com/zen").then(response => {
             this.setState({ quote: response.data })
+        })
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.id]: e.target.value
+        })
+    }
+
+    handleClick = e => {
+        axios.get(`https://api.github.com/users/${this.state.user}`).then(response => {
+            this.setState({ id: response.data.id })
         })
     }
 
@@ -17,6 +31,11 @@ export class ComponentDidMount extends Component {
             <div>
                 <h1>Zen</h1>
                 <h3>{this.state.quote}</h3>
+                <div>
+                    <input id="user" type="text" placeholder="Github user" value={this.state.user} onChange={this.handleChange} />
+                    <button onClick={this.handleClick}>Search ID</button>
+                </div>
+                <h3>ID = {this.state.id} </h3>
             </div>
         )
     }
