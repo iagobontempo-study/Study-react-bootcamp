@@ -35,9 +35,7 @@ export class ComponentDidMount extends Component {
                 <h1>Zen</h1>
 
                 {this.state.quote === '' ?
-                    <div className='loader'>
-
-                    </div>
+                    <div className='loader' />
                     :
                     <h3>{this.state.quote}</h3>}
 

@@ -3,7 +3,7 @@ import GlobalStyle from './GlobalStyle'
 
 /*
 ! Lifecycle */
-import ComponentDidMount from './lifecycle/ComponentDidMount'
+// import ComponentDidMount from './lifecycle/ComponentDidMount'
 
 /*
 ! Exercices */
@@ -16,6 +16,7 @@ import ComponentDidMount from './lifecycle/ComponentDidMount'
 // import ColorBoxes from './ex/7colorboxes/ColorBoxes';
 // import BoxMaker from './ex/8boxmaker/BoxMaker'
 // import TodoList from './ex/9todo/TodoList'
+import CardDealer from './ex/10carddealer/CardDealer';
 
 
 function App() {
@@ -31,8 +32,9 @@ function App() {
       {/* <ColorBoxes /> */}
       {/* <BoxMaker /> */}
       {/* <TodoList /> */}
+      <CardDealer />
 
-      <ComponentDidMount />
+      {/* <ComponentDidMount /> */}
 
       <GlobalStyle />
     </div>
