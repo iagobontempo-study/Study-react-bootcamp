@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import './loader.css'
 
 export class ComponentDidMount extends Component {
     state = {
@@ -10,7 +11,9 @@ export class ComponentDidMount extends Component {
 
     componentDidMount = () => {
         axios.get("https://api.github.com/zen").then(response => {
-            this.setState({ quote: response.data })
+            setTimeout(() => {
+                this.setState({ quote: response.data })
+            }, 3000);
         })
     }
 
@@ -30,7 +33,14 @@ export class ComponentDidMount extends Component {
         return (
             <div>
                 <h1>Zen</h1>
-                <h3>{this.state.quote}</h3>
+
+                {this.state.quote === '' ?
+                    <div className='loader'>
+
+                    </div>
+                    :
+                    <h3>{this.state.quote}</h3>}
+
                 <div>
                     <input id="user" type="text" placeholder="Github user" value={this.state.user} onChange={this.handleChange} />
                     <button onClick={this.handleClick}>Search ID</button>
