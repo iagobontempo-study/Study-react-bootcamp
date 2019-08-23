@@ -16,7 +16,8 @@ import GlobalStyle from './GlobalStyle'
 // import ColorBoxes from './ex/7colorboxes/ColorBoxes';
 // import BoxMaker from './ex/8boxmaker/BoxMaker'
 // import TodoList from './ex/9todo/TodoList'
-import CardDealer from './ex/10carddealer/CardDealer';
+// import CardDealer from './ex/10carddealer/CardDealer';
+import DogRouter from './ex/11dogrouter/DogRouter';
 
 
 function App() {
@@ -32,7 +33,8 @@ function App() {
       {/* <ColorBoxes /> */}
       {/* <BoxMaker /> */}
       {/* <TodoList /> */}
-      <CardDealer />
+      {/* <CardDealer /> */}
+      <DogRouter />
 
       {/* <ComponentDidMount /> */}
 
